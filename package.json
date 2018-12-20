@@ -75,6 +75,7 @@
     ]
   },
   "scripts": {
+    "postinstall": "npm run build",
     "build": "npm run build-cjs && npm run build-mjs && npm run build-esm",
     "build-cjs": "rimraf lib && BABEL_ENV=cjs babel src --ignore __tests__,__mocks__ -d lib && COPY_TO_FOLDER=lib npm run build-flow && COPY_TO_FOLDER=lib npm run build-ts",
     "build-esm": "rimraf esm && BABEL_ENV=esm babel src --ignore __tests__,__mocks__ -d esm && COPY_TO_FOLDER=esm npm run build-flow && COPY_TO_FOLDER=esm npm run build-ts",
